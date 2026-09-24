@@ -13,6 +13,7 @@ public class reverseArray{
     left++;
     right--;
 }
+    System.out.println(arr);
 
     }
 }
