@@ -1,5 +1,5 @@
-public class MaxSumWindow {
-        public static void main(String[] args) {
+public class MinSumWindow {
+    public static void main(String[] args) {
         int[] arr = {2, 4, 1, 7, 3, 6};
         int k = 3;
 
@@ -10,16 +10,16 @@ public class MaxSumWindow {
             windowSum += arr[i];
         }
 
-        int maxSum = windowSum;
+        int minSum = windowSum;
 
         // Slide the window
         for (int i = k; i < arr.length; i++) {
 
             windowSum = windowSum + arr[i] - arr[i - k];
 
-            maxSum = Math.max(maxSum, windowSum);
+            minSum = Math.min(minSum, windowSum);
         }
 
-        System.out.println("Maximum Sum = " + maxSum);
-        }
+        System.out.println("Minimum Sum = " + minSum);
+    }
 }
