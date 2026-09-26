@@ -1,6 +1,6 @@
 public class MaxAverageWindow {
     public static void main(String[] args) {
-         int[] arr = {1, 12, -5, -6, 50, 3};
+         int[] arr = {1, 12, -4, -6, 50, 3};
         int k = 4;
 
         int windowSum = 0;
