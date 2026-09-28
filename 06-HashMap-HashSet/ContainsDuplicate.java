@@ -12,7 +12,7 @@ public class ContainsDuplicate {
             }
             set.add(arr[i]);
         }
-        System.out.println(result);
+        System.out.println("2. Contains Duplicate: " + result);
         
        
     }
