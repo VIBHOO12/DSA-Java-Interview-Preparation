@@ -7,7 +7,7 @@ public class firstOccurance {
         return -1;
     }
     public static void main(String[] args) {
-        String haystack = "hello";
+        String haystack = "hellow";
         String needle = "ll";
         System.out.println(strStr(haystack, needle));
         
