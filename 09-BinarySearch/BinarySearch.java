@@ -52,8 +52,8 @@ public class BinarySearch {
     return answer;
 }
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 7, 9};
-        int target = 0;
+        int[] arr = {1, 3, 3, 3, 5, 7, 9};
+        int target = 3;
         // System.out.println(binarySearch(arr, target));
         System.out.println(firstOccurrence(arr, target));
     }
