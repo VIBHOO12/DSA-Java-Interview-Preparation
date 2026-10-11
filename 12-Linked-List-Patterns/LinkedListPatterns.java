@@ -9,6 +9,19 @@ class Node{
 
 public class LinkedListPatterns{
 
+
+
+      static Node createList(int... values) {
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        for (int value : values) {
+            tail.next = new Node(value);
+            tail = tail.next;
+        }
+
+        return dummy.next;
+    }
       public static void printList(Node head){
         Node current = head;
 
@@ -35,6 +48,48 @@ public class LinkedListPatterns{
         return prev;
 
     }
+
+    public static Node middleList(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public static boolean hasCycle(Node head) {
+    Node slow = head;
+    Node fast = head;
+
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow == fast) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+public static Node removeDuplicates(Node head) {
+    Node current = head;
+
+    while (current != null && current.next != null) {
+        if (current.data == current.next.data) {
+            current.next = current.next.next;
+        } else {
+            current = current.next;
+        }
+    }
+
+    return head;
+}
     public static void main(String[] args) {
 
         Node first = new Node(10);
@@ -56,8 +111,22 @@ public class LinkedListPatterns{
         System.out.print("2:Reverse List: ");
         Node reverse = reverseList(head);
         printList(reverse);
+
+        Node list2 = createList(10, 20, 30, 40, 50);
+        Node middle = middleList(list2);
+        System.out.println("Middle: " + middle.data);
         
+         Node list5 = createList(1, 2, 3);
+        list5.next.next.next = list5.next; // Creates a cycle
+        System.out.println("Cycle detected: " + hasCycle(list5));
+
+        Node list3 = createList(1, 1, 2, 3, 3);
+        removeDuplicates(list3);
+        System.out.print("Without duplicates: ");
+        printList(list3);
         
     }
+
+   
 
 }
