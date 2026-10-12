@@ -90,6 +90,28 @@ public static Node removeDuplicates(Node head) {
 
     return head;
 }
+
+ // 5. Remove Nth Node From End
+    static Node removeNthFromEnd(Node head, int n) {
+        Node dummy = new Node(0);
+        dummy.next = head;
+
+        Node slow = dummy;
+        Node fast = dummy;
+
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+
     public static void main(String[] args) {
 
         Node first = new Node(10);
@@ -115,15 +137,22 @@ public static Node removeDuplicates(Node head) {
         Node list2 = createList(10, 20, 30, 40, 50);
         Node middle = middleList(list2);
         System.out.println("Middle: " + middle.data);
-        
-         Node list5 = createList(1, 2, 3);
-        list5.next.next.next = list5.next; // Creates a cycle
-        System.out.println("Cycle detected: " + hasCycle(list5));
 
         Node list3 = createList(1, 1, 2, 3, 3);
         removeDuplicates(list3);
         System.out.print("Without duplicates: ");
         printList(list3);
+
+        Node list4 = createList(1, 2, 3, 4, 5);
+        Node updated = removeNthFromEnd(list4, 2);
+        System.out.print("After removing 2nd from end: ");
+        printList(updated);
+        
+         Node list5 = createList(1, 2, 3);
+        list5.next.next.next = list5.next; // Creates a cycle
+        System.out.println("Cycle detected: " + hasCycle(list5));
+
+        
         
     }
 
