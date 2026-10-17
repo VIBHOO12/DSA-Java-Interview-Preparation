@@ -15,6 +15,7 @@ public class ReverseQueue {
         queue.offer(30);
         queue.offer(40);
 
+        System.out.println("Original Queue: " + queue);
         while(!queue.isEmpty()){
             st.push(queue.poll());
         }
@@ -23,6 +24,6 @@ public class ReverseQueue {
         }
 
 
-        System.out.println("Queue: " + queue);
+        System.out.println("Reverse Queue: " + queue);
     }
 }
