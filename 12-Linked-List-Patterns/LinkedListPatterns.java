@@ -91,6 +91,25 @@ public static Node removeDuplicates(Node head) {
     return head;
 }
 
+ public static Node removeElements(Node head, int val) {
+
+        Node dummy = new Node(0);
+        dummy.next = head;
+
+        Node current = dummy;
+
+        while (current.next != null) {
+
+            if (current.next.data == val) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+
+        return dummy.next;
+    }
+
  // 5. Remove Nth Node From End
     static Node removeNthFromEnd(Node head, int n) {
         Node dummy = new Node(0);
@@ -148,10 +167,27 @@ public static Node removeDuplicates(Node head) {
         System.out.print("After removing 2nd from end: ");
         printList(updated);
         
-         Node list5 = createList(1, 2, 3);
+        Node list5 = createList(1, 2, 3);
         list5.next.next.next = list5.next; // Creates a cycle
         System.out.println("Cycle detected: " + hasCycle(list5));
 
+
+        // Linked list: 1 -> 2 -> 6 -> 3 -> 6
+        
+        Node head1 = createList(1, 2, 3, 6, 4, 5, 6);
+        int val = 6;
+
+        head1 = removeElements(head1, val);
+
+        // Print the updated linked list
+        Node temp = head1;
+
+        while (temp != null) {
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+
+        System.out.println("null");
         
         
     }
