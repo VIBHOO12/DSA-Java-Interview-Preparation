@@ -7,6 +7,6 @@ public class PowerRecursion {
         return base * power(base, n-1);
     }
     public static void main(String[] args) {
-        System.out.println(power(15, 2));
+        System.out.println(power(6, 3));
     }
 }
