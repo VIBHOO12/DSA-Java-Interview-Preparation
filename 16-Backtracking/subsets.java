@@ -6,7 +6,7 @@ public class subsets {
 
     static void generateSubsets(int[] arr, int index, List<Integer> current){
         if(index == arr.length){
-            System.out.println(current);
+            System.out.print(current);
             return;
         }
           // Choice 1: current element include karo
@@ -20,7 +20,7 @@ public class subsets {
         generateSubsets(arr, index + 1, current);
     }
   public static void main(String[] args) {
-    int[] arr = {1, 2};
+    int[] arr = {1, 2,3};
 
         generateSubsets(
             arr, 0, new ArrayList<>()
