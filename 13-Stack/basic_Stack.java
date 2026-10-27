@@ -8,6 +8,7 @@ public class basic_Stack {
         stack.push(20);
         stack.push(30);
         stack.push(40);
+        stack.push(50);
 
         System.out.println("Stack: " + stack);
         System.out.println("peak element: " + stack.peek());
